@@ -16,10 +16,10 @@
     (+ a b c)))
 
 (define (problem-2)
-  (let ([data (read-list-of-ints "part_1.txt")])
-    (let ([windows (calculate-windows data)])
+  (let* ([data (read-list-of-ints "part_1.txt")]
+         [windows (calculate-windows data)])
     (count identity
            (for/list ([a windows] [b (rest windows)])
-             (< a b))))))
+             (< a b)))))
 
 (problem-2)
